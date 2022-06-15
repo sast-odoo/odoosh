@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+"""
 from odoo import models, fields, api #usually you will want to import these 3
 
 class Spaceship(models.Model):
@@ -25,3 +26,4 @@ class Spaceship(models.Model):
                            )
     
     active = fields.Boolean(string="Active",default=True) #reserved field (has functionality programmed in already)
+    """
