@@ -6,7 +6,7 @@
         <field name="name">Academy / Admin</field>
     </record>
 
-    <record id="only_active_motify"> <!--Only let changes be done on active course-->
+    <record id="only_active_motify" model="ir.rule"> <!--Only let changes be done on active course-->
         <field name="name">Only Active Courses Can Be Modified</field>
         <field name="perm_read" eval="0"/>
         <field name="perm_write" eval="1"/>
