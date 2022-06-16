@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--form view, list view, search view-->
+
+
+<!-- FORM VIEW -->
+
+        <record model="ir.ui.view" id="course_view_form">
+        <!-- ^^ this is where we came up with "course_view_form" as the id, from the generic structure of "MODEL_view_TYPE"-->
+        <!-- https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html -->
+
+            <field name="name">academy.course.form</field>
+            <field name="model">academy.course</field> <!--technical name of the model we want this to view to apply to -->
+            <field name="arch" type="xml">
+                <form string="Course Form">
+                    <sheet>
+                        <h1><field name="name"></h1> <!--should display the name styled in h1-->
+                        <group>
+                        <!--should display Active and Level fields side by side in the form-->
+                            <group>
+                                <field name="active"/>
+                            </group>
+
+                            <group>
+                                <field name="level"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Description"> <!--sets a title of the page-->
+                                <field name="description"/> <!--contents of the description field will appear here-->
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<!-- LIST VIEW (tree) -->
+        <record model="ir.ui.view" id="course_view_list">
+            <field name="name">academy.course.list</field>
+            <field name="model">academy.course</field>
+            <field name="arch" type="xml">
+                <tree string="Course List"><!--title-->
+                    <field name="name"/><!--shows the contents of the name field here-->
+                    <field name="description"/>
+                    <field name="level"/>
+                </tree>
+            </field>
+        </record>
+
+<!-- SEARCH VIEW -->
+        <record model="ir.ui.view" id="course_view_search">
+            <field name="name">academy.course.search</field>
+            <field name="model">academy.course</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>
