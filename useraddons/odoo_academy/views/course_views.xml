@@ -15,15 +15,18 @@
             <field name="arch" type="xml">
                 <form string="Course Form">
                     <sheet>
-                        <h1><field name="name"></h1> <!--should display the name styled in h1-->
+                        <h1><field name="name"/></h1> <!--should display the name styled in h1-->
                         <group>
                         <!--should display Active and Level fields side by side in the form-->
                             <group>
                                 <field name="active"/>
+                                <field name="level"/>
                             </group>
 
                             <group>
-                                <field name="level"/>
+                                <field name="base_price"/>
+                                <field name="additional_fee"/>
+                                <field name="total_price" force_save="1"/> <!--Since we made it readonly, we need to make this save after the onchange method-->
                             </group>
                         </group>
 
