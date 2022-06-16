@@ -24,8 +24,10 @@
     
     'data': [
         
-        "security/academy_security.xml", #LINK THE SEXURITY XML FILE BEFORE ACCESS RIGHTS CSV
-        "security/ir.model.access.csv"
+        "security/academy_security.xml", #LINK THE SECURITY XML FILE BEFORE ACCESS RIGHTS CSV
+        "security/ir.model.access.csv",
+
+        "views/academy_menuitems.xml"
         
     ],
     
