@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+
+    <!-- This defines the action, but to link it to the ui so it can be preformed you have to refer to it in something like a menu item (see below)-->
         <record model="ir.actions.act_window" id="course_list_actions"> <!--for the course model-->
             <field name="name">Courses</field>
             <field name="res_model">academy.course</field>
@@ -12,6 +14,18 @@
             </field>
         </record>
 
+        <record model="ir.actions.act_window" id="session_list_action">
+            <field name="name">Sessions</field>
+            <field name="res_model">academy.session</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create the first session
+                </p>
+            </field>
+
+        </record>
+
         <menuitem name="Odoo Academy"
                     id="menu_academy"
                     sequence="1"/> <!--id: created here; sequence: appear at the top of the list (highest priority)-->
@@ -21,6 +35,8 @@
         <!--now we create a menu item to display the action we defined above (course_list_actions)-->
         <menuitem id="menu_academy_courses" name="Courses" parent="menu_academy_sub" sequence="3"
             action="course_list_actions"/>
+        
+        <menuitem id="menu_academy_session" name="SESSIONS" parent="menu_academy_sub" sequence="4" action="session_list_action"/>
 
     </data>
 </odoo>

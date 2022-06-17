@@ -29,7 +29,9 @@
 
         "views/academy_menuitems.xml",
 
-        "views/course_views.xml"
+        "views/course_views.xml",
+
+        "views/session_views.xml"
         
     ],
     

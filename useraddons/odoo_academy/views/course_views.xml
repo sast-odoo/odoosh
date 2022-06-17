@@ -34,6 +34,10 @@
                             <page string="Description"> <!--sets a title of the page-->
                                 <field name="description"/> <!--contents of the description field will appear here-->
                             </page>
+
+                            <page string="Sessions">
+                                <field name="session_ids"/>
+                            </page>
                         </notebook>
                     </sheet>
                 </form>

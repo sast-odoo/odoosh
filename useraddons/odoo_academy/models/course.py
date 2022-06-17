@@ -23,6 +23,11 @@ class Course(models.Model):
     additional_fee = fields.Float(string="Additional Fee",default=10.00)
     total_price = fields.Float(string="Total Price",readonly=True)
 
+    #ONE2MANY FIELD TO LINK TO SESSIONS
+    session_ids = fields.One2many(comodel_name="academy.session",
+                                    inverse_name="course_id", #name of the field of the session id
+                                    string="Sessions")
+
     # IF THE BASE PRICE/ADDITIONAL FEE PRICE CHANGES, RE-CALCULATE THE TOTAL PRICE
     @api.onchange("base_price","additional_fee") #Trigger whenever base price or additional fee change
     def _onchange_total_price(self):
