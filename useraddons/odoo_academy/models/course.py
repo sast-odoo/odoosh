@@ -32,7 +32,7 @@ class Course(models.Model):
         self.total_price = self.base_price + self.additional_fee
 
     #We want to make sure the additional fee is always greater than $10.
-    @api.constrains("additional_fee") #Set a CONSTRAINT on additional fee to check additional fee
+    @api.constrains("additional_fee") #Set a CONSTRAINT on additional fee to check additional fee.
     def _check_additional_fee(self):
         for record in self:
             if record.additional_fee < 10.00:

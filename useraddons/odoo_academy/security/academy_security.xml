@@ -13,7 +13,7 @@
         <field name="perm_create" eval="0"/>
         <field name="perm_unlink" eval="1"/>
         <!--Domain: these permissions will only apply to courses where "active" is set to true-->
-        <field name="domain_force">[("active","=","True")]</field>
+        <field name="domain_force">[("active","=",True)]</field> <!--MAKE SURE YOU PUT TUPLE INSIDE OF SQUARE BRACKETS!!!!-->
         <field name="model_id" ref="model_academy_course"/>
     </record>
 </odoo>
