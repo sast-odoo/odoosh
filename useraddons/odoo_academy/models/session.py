@@ -42,6 +42,10 @@ class Session(models.Model):
                             stored=True)
 
 
+    total_price = fields.Float(string="Total Price",
+                                related="course_id.total_price")
+
+
     @api.depends("start_date","duration") #everytime start_date or duration changes, this will run to update the end date
     def _compute_end_date(self):
         for record in self:
