@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_order_form_inherit_academy">
+            <field name="name">sale.order.form.inherit.academy</field>
+            <field name="model">sale.order</field> <!--keep it the same model as the model you're inheriting-->
+            <field name="inherit_id" ref="sale.view_order_form"/> <!--RETRIEVED FROM "Edit View: Form" in debug mode under "External ID"-->
+
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                <!--This goes all the way into the xml view code of the sale.view_order_form, until it finds a
+                field with the name of payment_term_id and uses that as the xpath, then puts our code AFTER it-->
+
+                    <field name="session_id"/> <!--will be put after the payment_term_id field in the view.-->
+                </xpath>
+
+                <field name="partner_id" position="before">
+                    <field name="instructor_id" attrs="{'invisible':[('session_id','=', False)]}"/>
+                    <!--Makes this field invisible if the "session_id" for this record is false (that is: not set)-->
+                </field>
+
+
+                <xpath expr="//sheet//notebook" position="inside">
+                <!--finds a notebook that's within a sheet, then places it inside of it below the other content that's inside of it.-->
+
+                    <!--create a whole new page.-->
+                    <page string="Students" attrs="{'invisible':[('session_id','=',False)]}">
+                        <field name="student_ids">
+                            <tree> <!-- a tree to be put inside each student_id field. -->
+                                <field name="name"/>
+                                <field name="phone"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

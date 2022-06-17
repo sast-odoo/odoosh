@@ -20,7 +20,7 @@
     
     'version': '0.1',
     
-    'depends': ['base'],
+    'depends': ['sale'], #inheritances goes here
     
     'data': [
         
@@ -31,8 +31,9 @@
 
         "views/course_views.xml",
 
-        "views/session_views.xml"
+        "views/session_views.xml",
         
+        "views/sale_views_inherit.xml"
     ],
     
     'demo': [
