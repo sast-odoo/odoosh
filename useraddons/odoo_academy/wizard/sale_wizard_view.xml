@@ -9,7 +9,7 @@
                 <form string="Create Sale Order for Session">
                     <group>
                         <field name="session_id"/>
-                        <field name="session_student_ids" invisible="1"/>
+                        <field name="session_student_ids" invisible="1"/> <!--need to get session_student_ids in here to use it on the next line-->
                         <field name="student_ids" domain="[('id','in',session_student_ids)]"/> <!--BE CAREFUL with the quotes around these!!!-->
                     </group>
 
