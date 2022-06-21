@@ -29,10 +29,12 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='create_date']" position="after">
                     <field name="expiration"/>
+                    <field name="state"/>
                 </xpath>
             </field>
 
         </record>
+
 
     </data>
 </odoo>
