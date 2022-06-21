@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- modify the page of each sale order to include the expiration date-->
+
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_order_form_inherit_tvu">
+            <field name="name">sale.order.form.inherit.tvu</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='commitment_date']" position="after">
+                    Expiration
+                    <field name="expiration"/>
+                </xpath>
+
+                
+            </field>
+        </record>
+    </data>
+</odoo>

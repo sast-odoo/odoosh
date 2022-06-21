@@ -5,10 +5,8 @@
     
     "depends" : ["sale"],
 
-    "data" : [],
+    "data" : [ "views/sale_views_inherit.xml"],
 
     "demo" : []
-
-
 
 }
