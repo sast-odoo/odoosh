@@ -20,7 +20,7 @@
     
     'version': '0.1',
     
-    'depends': ['sale'], #inheritances goes here
+    'depends': ['sale','website'], #inheritances goes here and other modules that this one depends on
     
     'data': [
         
@@ -37,7 +37,8 @@
 
         "wizard/sale_wizard_view.xml",
 
-        "report/session_report_templates.xml"
+        "report/session_report_templates.xml",
+        "views/academy_web_templates.xml"
     ],
     
     'demo': [
