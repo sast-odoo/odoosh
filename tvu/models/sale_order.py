@@ -23,4 +23,3 @@ class SaleOrder(models.Model):
         for record in recordset:
             if datetime.now().day > record.expiration.day: #if this day is past the expiration day
                     record.state = "cancel"
-
