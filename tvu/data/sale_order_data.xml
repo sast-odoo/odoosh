@@ -11,7 +11,8 @@
             <field name="interval_number">1</field>
             <field name="interval_type">days</field>
             <field name="numbercall">-1</field>
-            <field name="nextcall">2022-6-22 00:00:00</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).strftime('%Y-%m-%d 04:00:00')"/>
+            <!-- ^^ runs at midnight EST (or 4:00 UTC)-->
         </record>
     </data>
 </odoo>
